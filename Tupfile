@@ -1,0 +1,1 @@
+: sim.cc |> g++ -x objective-c++ -framework Foundation -framework AppKit -framework QTKit %f  -o %o |> %B
