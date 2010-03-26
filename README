@@ -1,8 +1,0 @@
-Negative Mass Simulator
-=======================
-
-You should be able to build (once you have devtools) on any mac with:
-
-    make
-
-I also include a `Tupfile` in case you like that sort of thing.
