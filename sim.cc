@@ -145,7 +145,7 @@ mass_t translate(const std::vector<mass_t> & masses, const int particle_i)
 		
 		double dsq = pos_diff.length_squared();
 		if (dsq < 0.00000001) continue;
-		if (dsq > DBL_MAX) continue;
+		if (dsq >= DBL_MAX) continue;
 		double same_dir = ((particle.mass < 0 && mass_i.mass < 0) ||
 		                   (particle.mass > 0 && mass_i.mass > 0)) ? -1.0 : 1.0;
 		
