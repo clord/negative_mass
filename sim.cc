@@ -8,7 +8,7 @@ const double C = 1.0;
 const int num_masses = 1800;
 
 
-// A force is a vector in 3-space.
+// Need a quick and dirty vector type
 struct vec_t {
 	double x, y, z;
 	vec_t(double X, double Y, double Z) : x(X), y(Y), z(Z) {}
@@ -115,6 +115,7 @@ struct vec_t {
 	}
 };
 
+/// Represent masses, which have a velocity, a position, and some quantity of mass
 struct mass_t {
 	double mass;
 	vec_t position;
@@ -138,6 +139,7 @@ mass_t translate(const std::vector<mass_t> & masses, const int particle_i)
 
 	vec_t vel_vec(0.0, 0.0, 0.0);
 	vec_t pos_vec(0.0, 0.0, 0.0);
+	// sum the effects of all other particles on this particular particle
 	for (std::vector<mass_t>::const_iterator i = masses.begin(); i != masses.end(); ++i) {
 		mass_t mass_i(*i);
 		vec_t vel_diff = particle.velocity - mass_i.velocity;
@@ -175,7 +177,6 @@ int main(int argc, char ** argv) {
 
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	QTMovie * movie = [[QTMovie alloc] initToWritableFile: @"movie.mov" error: nil];
-	[movie retain];
 	dispatch_queue_t queue(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
 	srand(time(0));
 	// Fill the world with masses
