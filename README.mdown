@@ -5,10 +5,10 @@ You should be able to build (once you have devtools) on any mac with:
 
     make
 
-I also include a `Tupfile` in case you like that sort of thing. I do.
+I also include a [`Tupfile`](http://gittup.org/tup/) in case you like that sort of thing. I do.
 
 
-More info at [my blog post about this code](http://christopher.lord.ac/wanna-simulate-the-universe-0)
+More info (including videos of what the output is) at [my blog post about this code](http://christopher.lord.ac/wanna-simulate-the-universe-0)
 
 
 Licence
